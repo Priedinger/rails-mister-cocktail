@@ -1,0 +1,16 @@
+
+<div class="banner">
+  <div class="container">
+    <h1>Cocktails list</h1>
+    <%= link_to 'Add a new cocktail', new_cocktail_path %>
+  </div>
+</div>
+<div class="container">
+  <div class="cocktails">
+    <% @cocktails.each do |cocktail|%>
+      <div class="card-product">
+        <img src="https://picsum.photos/200/300" alt="">
+        <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+
