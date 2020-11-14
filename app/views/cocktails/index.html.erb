@@ -8,9 +8,11 @@
 <div class="container">
   <div class="cocktails">
     <% @cocktails.each do |cocktail|%>
+      <%= link_to cocktail_path(cocktail) do %>
       <div class="card-product">
-        <img src="https://picsum.photos/200/300" alt="">
-        <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <p> <%= cocktail.name.capitalize %> </p>
       </div>
+      <% end %>
     <% end %>
 
